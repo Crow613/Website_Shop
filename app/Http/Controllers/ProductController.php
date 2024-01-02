@@ -9,7 +9,12 @@ class ProductController extends Controller
 {
     public function index()
     {
-      return view('product.index');
+      $product = new Product;
+
+      $products = $product->all();
+
+      return view('product.index', ['products' => $products]);
+
     }
 
     public function create()
@@ -27,25 +32,67 @@ class ProductController extends Controller
 
       ]);
 
-    }
+      if(!$product){
 
-    public function edit($id)
-    {
-       return view('product.edit');
-    }
+        return redirect()->route('products.create');
 
-    public function update($id)
-    {
+      }
+
+      return redirect()->route('products.index');
 
     }
 
-    public function show($id)
+    public function edit(int $id)
     {
-      return view('product.show');
+
+      $product = new Product;
+      $product = $product->find($id);
+
+       return view('product.edit', ['product'=>$product]);
+
     }
 
-    public function destroy($id)
+    public function update(int $id, Request $request)
     {
+
+     $product = new Product;
+     $product = $product->find($id);
+      $updated = $product->update([
+       'name' => $request->name,
+       'description' => $request->description,
+       'price' => $request->price
+     ]);
+          if(!$updated){
+
+             return redirect()->route('products.edit',$id);
+          }
+
+          return redirect()->route('products.index');
+
+    }
+
+    public function show(int $id)
+    {
+      $product = new Product;
+      $product = $product->find($id);
+
+      return view('product.show',['product'=>$product]);
+
+    }
+
+    public function destroy(int $id)
+    {
+
+      $product = new Product;
+      $deleted = $product->find($id)->delete();
+
+      if(!$deleted) {
+
+        return false;
+
+      }
+
+      return redirect()->route('products.index');
 
     }
 }
