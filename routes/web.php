@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\ProductController;
@@ -29,3 +30,9 @@ Route::patch('/products/{id}', [ProductController::class,'update'])->name('produ
 
 Route::get('/products/{id}', [ProductController::class,'show'])->name('products.show');
 Route::delete('/products/{id}', [ProductController::class,'destroy'])->name('products.destroy');
+
+Route::group(['prefix' => 'admin'], function (){
+
+    Route::get('/',[AdminController::class, 'index']);
+
+});
