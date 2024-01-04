@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 
   <div>
         <div>
-            <a href="{{ route('products.index') }}" class="btn btn-dark  mt-5 mb-5">{{ __("BACK") }}</a>
+            <a href="{{ route('admin.products.index') }}" class="btn btn-dark  mt-5 mb-5">{{ __("BACK") }}</a>
         </div>
         <div>
             <h1>{{ $product->name }}</h1>

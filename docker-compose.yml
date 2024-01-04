@@ -6,6 +6,7 @@ services:
             args:
                 WWWGROUP: '${WWWGROUP}'
         image: sail-8.2/app
+        container_name: 'Sail'
         extra_hosts:
             - 'host.docker.internal:host-gateway'
         ports:
@@ -25,6 +26,7 @@ services:
             - mysql
     mysql:
         image: 'mysql/mysql-server:8.0'
+        container_name: 'Mysql'
         ports:
             - '${FORWARD_DB_PORT:-3306}:3306'
         environment:

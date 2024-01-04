@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 
 <div>
  <div >
 
-   <a href="{{ route('products.create')}}" class="btn btn-success btn-lg mt-5 md-2 ">{{__("ADD")}}</a>
+   <a href="{{ route('admin.products.create')}}" class="btn btn-success btn-lg mt-5 md-2 ">{{__("ADD")}}</a>
 
  </div>
   <table class="table">
@@ -29,10 +29,10 @@
       <td>{{$product->price}}</td>
       <td>{{$product->created_at}}</td>
       <td>{{$product->updated_at}}</td>
-      <td> <a href="{{ route('products.show',$product->id) }}" class="btn btn-warning">{{__("SHOW")}}</a> </td>
-      <td> <a href="{{ route('products.edit',$product->id) }}" class="btn btn-success">{{__("EDIT")}}</a> </td>
+      <td> <a href="{{ route('admin.products.show',$product->id) }}" class="btn btn-warning">{{__("SHOW")}}</a> </td>
+      <td> <a href="{{ route('admin.products.edit',$product->id) }}" class="btn btn-success">{{__("EDIT")}}</a> </td>
      <td>
-       <form action="{{ route('products.destroy',$product->id) }}" method="post">
+       <form action="{{ route('admin.products.destroy',$product->id) }}" method="post">
          @csrf
          @method('delete')
 

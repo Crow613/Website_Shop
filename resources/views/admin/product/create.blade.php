@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 
@@ -7,11 +7,11 @@
 
   <div >
 
-    <a href="{{ route('products.index')}}" class="btn btn-dark mt-5 mb-5 ">{{__("BACK")}}</a>
+    <a href="{{ route('admin.products.index')}}" class="btn btn-dark mt-5 mb-5 ">{{__("BACK")}}</a>
 
   </div>
 
-  <form action="{{Route('products.store')}}" method="post">
+  <form action="{{Route('admin.products.store')}}" method="post">
     @csrf
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">{{__("NAME")}}</label>
@@ -30,5 +30,5 @@
     <button type="submit" class="btn btn-success">{{__("CREATE")}}</button>
   </form>
 </div>
- 
+
 @endsection
