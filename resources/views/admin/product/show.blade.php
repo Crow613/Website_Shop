@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <div>
+  <div class="col-12">
         <div>
             <a href="{{ route('admin.products.index') }}" class="btn btn-dark  mt-5 mb-5">{{ __("BACK") }}</a>
         </div>

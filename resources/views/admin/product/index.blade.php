@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div>
+<div class="col-12">
  <div >
 
    <a href="{{ route('admin.products.create')}}" class="btn btn-success btn-lg mt-5 md-2 ">{{__("ADD")}}</a>
