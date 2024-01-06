@@ -2,23 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 
 class SiteController extends Controller
 {
-    public function index(): view
+    public function home(): View
     {
-      return view('site.index');
+        return view('site.index');
     }
 
-    public function about()
+    public function about(): View
     {
-      return view('site.about');
+        return view('site.about');
     }
 
-    public function contact()
+    public function contact(): View
     {
-      return view('site.contact');
+        return view('site.contact');
     }
+
+
 }

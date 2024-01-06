@@ -16,28 +16,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [SiteController::class, 'index'])->name('home');
-Route::get('/about', [SiteController::class, 'about'])->name('about');
-Route::get('/contact', [SiteController::class, 'contact'])->name('contact');
+Route::get('/',[SiteController::class,'home'])->name('home');
+Route::get('/about',[SiteController::class,'about'])->name('about');
+Route::get('/contact',[SiteController::class,'contact'])->name('contact');
 
+//Site
 Route::group(['prefix' => 'products'], function () {
-
-    Route::get('/', [\App\Http\Controllers\ProductController::class, 'index'])->name('site.products.index');
-    Route::get('/{id}', [\App\Http\Controllers\ProductController::class, 'show'])->name('site.products.show');
-
+    Route::get('/',[\App\Http\Controllers\ProductController::class,'index'])->name('site.products.index');
+    Route::get('/{id}',[\App\Http\Controllers\ProductController::class,'show'])->name('site.products.show');
 });
 
 
+//Admin
 Route::group(['prefix' => 'admin'], function () {
+    Route::get('/',[AdminController::class,'index'])->name('admin.home');
 
-    Route::get('/', [AdminController::class, 'index'])->name('admin.home');
+    Route::get('/products',[ProductController::class,'index'])->name('products.index');
+    Route::get('/products/create',[ProductController::class,'create'])->name('products.create');
+    Route::post('/products',[ProductController::class,'store'])->name('products.store');
+    Route::get('/products/edit/{id}',[ProductController::class,'edit'])->name('products.edit');
+    Route::patch('/products/{id}',[ProductController::class,'update'])->name('products.update');
+    Route::get('/products/{id}',[ProductController::class,'show'])->name('products.show');
+    Route::delete('/products/{id}',[ProductController::class,'destroy'])->name('products.destroy');
 
-    //Products
-    Route::get('/products', [ProductController::class, 'index'])->name('admin.products.index');
-    Route::get('/products/create', [ProductController::class, 'create'])->name('admin.products.create');
-    Route::post('/products', [ProductController::class, 'store'])->name('admin.products.store');
-    Route::get('/products/edit/{id}', [ProductController::class, 'edit'])->name('admin.products.edit');
-    Route::patch('/products/{id}', [ProductController::class, 'update'])->name('admin.products.update');
-    Route::get('/products/{id}', [ProductController::class, 'show'])->name('admin.products.show');
-    Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
 });

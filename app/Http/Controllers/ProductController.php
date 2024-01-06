@@ -10,13 +10,12 @@ class ProductController extends Controller
     {
         $products = Product::all();
 
-        return view('site.product.index', compact('products'));
+        return view('site.product.index',compact('products'));
     }
 
     public function show(int $id)
     {
         $product = Product::find($id);
-
-        return view('site.product.show', ['product' => $product]);
+        return view('site.product.show',compact('product'));
     }
 }

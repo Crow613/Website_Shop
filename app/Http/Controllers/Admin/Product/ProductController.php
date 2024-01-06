@@ -4,96 +4,87 @@ namespace App\Http\Controllers\Admin\Product;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(): View
     {
-      $product = new Product;
+        $product = new Product;
 
-      $products = $product->all();
+        $products = $product->all();
 
-      return view('admin.product.index', ['products' => $products]);
-
+        return view('admin.product.index', ['products' => $products]);
     }
 
-    public function create()
+    public function create(): View
     {
-      return view('admin.product.create');
+        return view('admin.product.create');
     }
 
     public function store(Request $request)
     {
+        $product = Product::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price
+        ]);
 
-      $product = Product::create([
-        'name'=> $request->name,
-        'description' => $request->description,
-        'price' => $request->price
+        if (!$product) {
+            return redirect()->route('admin.products.create');
+        }
 
-      ]);
-
-      if(!$product){
-
-        return redirect()->route('admin.products.create');
-
-      }
-
-      return redirect()->route('admin.products.index');
-
+        return redirect()->route('admin.products.index');
     }
 
-    public function edit(int $id)
+    public function edit(int $id): View
     {
+        $product = new Product;
 
-      $product = new Product;
-      $product = $product->find($id);
+        $product = $product->find($id);
 
-       return view('admin.product.edit', ['product'=>$product]);
-
+        return view('admin.product.edit', ['product' => $product]);
     }
 
     public function update(int $id, Request $request)
     {
+        $product = new Product;
 
-     $product = new Product;
-     $product = $product->find($id);
-      $updated = $product->update([
-       'name' => $request->name,
-       'description' => $request->description,
-       'price' => $request->price
-     ]);
-          if(!$updated){
+        $product = $product->find($id);
 
-             return redirect()->route('admin.products.edit',$id);
-          }
+        $updated = $product->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price
+        ]);
 
-          return redirect()->route('admin.products.index');
+        if (!$updated){
+            return redirect()->route('admin.products.edit',$id);
+        }
+
+        return redirect()->route('admin.products.index');
 
     }
 
-    public function show(int $id)
+    public function show(int $id): View
     {
-      $product = new Product;
-      $product = $product->find($id);
+        $product = new Product;
+        $product = $product->find($id);
 
-      return view('admin.product.show',['product'=>$product]);
-
+        return view('admin.product.show',['product' => $product]);
     }
 
     public function destroy(int $id)
     {
+        $product = new Product;
 
-      $product = new Product;
-      $deleted = $product->find($id)->delete();
+        $deleted = $product->find($id)->delete();
 
-      if(!$deleted) {
+        if (!$deleted) {
+            return false;
+        }
 
-        return false;
-
-      }
-
-      return redirect()->route('admin.products.index');
-
+        return redirect()->route('admin.products.index');
     }
 }
