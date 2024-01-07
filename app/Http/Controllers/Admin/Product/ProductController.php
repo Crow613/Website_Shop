@@ -32,10 +32,10 @@ class ProductController extends Controller
         ]);
 
         if (!$product) {
-            return redirect()->route('admin.products.create');
+            return redirect()->route('products.create');
         }
 
-        return redirect()->route('admin.products.index');
+        return redirect()->route('products.index');
     }
 
     public function edit(int $id): View
@@ -60,10 +60,10 @@ class ProductController extends Controller
         ]);
 
         if (!$updated){
-            return redirect()->route('admin.products.edit',$id);
+            return redirect()->route('products.edit',$id);
         }
 
-        return redirect()->route('admin.products.index');
+        return redirect()->route('products.index');
 
     }
 
@@ -85,6 +85,6 @@ class ProductController extends Controller
             return false;
         }
 
-        return redirect()->route('admin.products.index');
+        return redirect()->route('products.index');
     }
 }

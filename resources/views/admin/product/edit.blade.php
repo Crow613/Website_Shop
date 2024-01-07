@@ -1,6 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
+
+@include('includes.admin.topbar')
+  
     <div class="col-4 mt-5">
         <div>
             <a href="{{ route('products.index') }}" class="btn btn-dark  mt-5 mb-5">{{ __("BACK") }}</a>
@@ -22,5 +25,6 @@
             </div>
             <button type="submit" class="btn btn-success">{{__("UPDATE")}}</button>
         </form>
-    </div>
+    </div> 
+    
 @endsection

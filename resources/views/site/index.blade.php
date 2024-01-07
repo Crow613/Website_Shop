@@ -1,5 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.site')
 
 @section('content')
-    <h1>This is home page</h1>
+<!-- <div class="bg-white py-24 sm:py-32"> -->
+  
+<!-- </div> -->
+
 @endsection

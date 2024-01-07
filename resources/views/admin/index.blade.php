@@ -1,5 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
-<h1>Admin page</h1>
+   
+   @include('includes.admin.topbar')
+   @include('includes.admin.sidebar')
+ 
+    <h1 class=" bg-orange-500">Admin</h1>
+   
+
 @endsection

@@ -1,9 +1,13 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="col-md-12">
+
+@include('includes.admin.topbar')
+@include('includes.admin.sidebar')
+
+    <div class=" container">
         <div>
-            <a href="{{ route('products.index') }}" class="btn btn-dark  mt-5 mb-5">{{ __("BACK") }}</a>
+            <a href="{{ route('products.index') }}" class="  mt-5 mb-5">{{ __("BACK") }}</a>
         </div>
         <div>
             <h1>{{ $product->name }}</h1>
@@ -11,4 +15,5 @@
             <p>{{ $product->price }}</p>
         </div>
     </div>
+    
 @endsection
