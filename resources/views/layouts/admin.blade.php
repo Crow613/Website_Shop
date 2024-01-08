@@ -13,7 +13,7 @@
 </head>
 <body class="text-gray-800 font-inter">
 
-<main class="w-full md:w-[calc(100%-256px)] md:ml-64  min-h-screen transition-all main">
+<main class="w-full md:w-[calc(100%-256px)] md:ml-64  min-h-screen transition-all main bg-slate-400">
      
     @yield('content')
 
