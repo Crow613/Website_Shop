@@ -6,99 +6,41 @@
             </button>
             <ul class="flex items-center text-sm ml-4">
                 <li class="mr-2">
-                    <a href="#" class="text-green-600 hover:text-gray-400 font-medium">Products</a>
+                    <a href="#" class="text-green-600 hover:text-gray-400 font-medium">products</a>
                 </li>
                 <li class="text-gray-400 mr-2 font-medium">/</li>
                 <li class="text-gray-400 mr-2 font-medium">cotegorie</li>
                 
             </ul>
+            
             <ul class="ml-auto flex items-center">
                 <li class="mr-1 dropdown">
                     <button type="button" class="dropdown-toggle text-gray-400 w-8 h-8 rounded flex items-center justify-center hover:bg-gray-50 hover:text-gray-600">
                         <i class="ri-search-line"></i>
                     </button>
                     <div class="dropdown-menu shadow-md shadow-black/5 z-30 hidden max-w-xs w-full bg-white rounded-md border border-gray-100">
-                        <form action="" class="p-4 border-b border-b-gray-100">
+                        <form action="{{ route('product.search') }}" method="get" class="p-4 border-b border-b-gray-100">
                             <div class="relative w-full">
-                                <input type="text" class="py-2 pr-4 pl-10 bg-gray-50 w-full outline-none border border-gray-100 rounded-md text-sm focus:border-blue-500" placeholder="Search...">
-                                <i class="ri-search-line absolute top-1/2 left-4 -translate-y-1/2 text-gray-400"></i>
+                                <input type="text" name="name" class="py-2 pr-4 pl-10 bg-gray-50 w-full outline-none border border-gray-100 rounded-md text-sm focus:border-blue-500" placeholder="Search...">
+                                <button class=" bg-transparent" type="submit"><i class="ri-search-line absolute top-1/2 left-4 -translate-y-1/2 text-gray-400"></i></button>
                             </div>
                         </form>
                         <div class="mt-3 mb-2">
                             <div class="text-[13px] font-medium text-gray-400 ml-4 mb-2">Recently</div>
                             <ul class="max-h-64 overflow-y-auto">
+                            
+                                
                                 <li>
                                     <a href="#" class="py-2 px-4 flex items-center hover:bg-gray-50 group">
                                         <img src="https://placehold.co/32x32" alt="" class="w-8 h-8 rounded block object-cover align-middle">
                                         <div class="ml-2">
-                                            <div class="text-[13px] text-gray-600 font-medium truncate group-hover:text-blue-500">Create landing page</div>
-                                            <div class="text-[11px] text-gray-400">$345</div>
+                                            <div class="text-[13px] text-gray-600 font-medium truncate group-hover:text-blue-500">name</div>
+                                            <div class="text-[11px] text-gray-400">.$</div>
                                         </div>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#" class="py-2 px-4 flex items-center hover:bg-gray-50 group">
-                                        <img src="https://placehold.co/32x32" alt="" class="w-8 h-8 rounded block object-cover align-middle">
-                                        <div class="ml-2">
-                                            <div class="text-[13px] text-gray-600 font-medium truncate group-hover:text-blue-500">Create landing page</div>
-                                            <div class="text-[11px] text-gray-400">$345</div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="py-2 px-4 flex items-center hover:bg-gray-50 group">
-                                        <img src="https://placehold.co/32x32" alt="" class="w-8 h-8 rounded block object-cover align-middle">
-                                        <div class="ml-2">
-                                            <div class="text-[13px] text-gray-600 font-medium truncate group-hover:text-blue-500">Create landing page</div>
-                                            <div class="text-[11px] text-gray-400">$345</div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="py-2 px-4 flex items-center hover:bg-gray-50 group">
-                                        <img src="https://placehold.co/32x32" alt="" class="w-8 h-8 rounded block object-cover align-middle">
-                                        <div class="ml-2">
-                                            <div class="text-[13px] text-gray-600 font-medium truncate group-hover:text-blue-500">Create landing page</div>
-                                            <div class="text-[11px] text-gray-400">$345</div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="py-2 px-4 flex items-center hover:bg-gray-50 group">
-                                        <img src="https://placehold.co/32x32" alt="" class="w-8 h-8 rounded block object-cover align-middle">
-                                        <div class="ml-2">
-                                            <div class="text-[13px] text-gray-600 font-medium truncate group-hover:text-blue-500">Create landing page</div>
-                                            <div class="text-[11px] text-gray-400">$345</div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="py-2 px-4 flex items-center hover:bg-gray-50 group">
-                                        <img src="https://placehold.co/32x32" alt="" class="w-8 h-8 rounded block object-cover align-middle">
-                                        <div class="ml-2">
-                                            <div class="text-[13px] text-gray-600 font-medium truncate group-hover:text-blue-500">Create landing page</div>
-                                            <div class="text-[11px] text-gray-400">$345</div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="py-2 px-4 flex items-center hover:bg-gray-50 group">
-                                        <img src="https://placehold.co/32x32" alt="" class="w-8 h-8 rounded block object-cover align-middle">
-                                        <div class="ml-2">
-                                            <div class="text-[13px] text-gray-600 font-medium truncate group-hover:text-blue-500">Create landing page</div>
-                                            <div class="text-[11px] text-gray-400">$345</div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="py-2 px-4 flex items-center hover:bg-gray-50 group">
-                                        <img src="https://placehold.co/32x32" alt="" class="w-8 h-8 rounded block object-cover align-middle">
-                                        <div class="ml-2">
-                                            <div class="text-[13px] text-gray-600 font-medium truncate group-hover:text-blue-500">Create landing page</div>
-                                            <div class="text-[11px] text-gray-400">$345</div>
-                                        </div>
-                                    </a>
-                                </li>
+                                
+                           
                             </ul>
                         </div>
                     </div>
@@ -227,6 +169,7 @@
                     </ul>
                 </li>
             </ul>
+            
     </div>    
     <!--end menu bar -->
      

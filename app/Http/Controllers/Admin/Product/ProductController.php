@@ -87,4 +87,24 @@ class ProductController extends Controller
 
         return redirect()->route('products.index');
     }
+
+    public function seek(Request $request)
+    {
+        
+        $product = Product::whereName($request->name)->first();
+          
+            $products =[
+
+                'id' => $product['id'],
+                'name' => $product['name'],
+                'price' => $product['price'],
+
+            ];
+
+        if($products){
+
+            return view('/admin/search',['products'=>$products]);
+
+        }   
+    }
 }
