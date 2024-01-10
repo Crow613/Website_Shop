@@ -12,7 +12,7 @@
                         <p class="card-text text-4xl"> {{ $product->price }}$</p>
                         <div class="flex">
                              <!-- Previous Button -->
-                          <a href="{{ route('site.products.index') }}" class="flex items-center justify-center px-3 h-8 text-sm font-medium  rounded-lg hover:bg-gray-100   dark:border-gray-300  dark:hover:bg-gray-700">
+                          <a href="{{ route('site.products.index') }}" class="flex items-center justify-center px-3 h-8 text-sm font-medium  rounded-lg hover:bg-gray-100   ">
                                <svg class="h-6 w-6 text-green-700"  fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/> </svg>
                          </a>
                         </div>

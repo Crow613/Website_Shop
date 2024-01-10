@@ -2,7 +2,7 @@
 
 @section('content')
 
-@include('includes.admin.topbar')
+
   
     <div class="col-4 mt-5">
         <div>

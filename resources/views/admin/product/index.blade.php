@@ -2,19 +2,19 @@
 
 @section('content')
 
-@include('includes.admin.topbar')
-@include('includes.admin.sidebar')
+
+
     
-    <div class="relative overflow-x-auto bg-slate-400">
-    <div class="   right-full">
+    <!-- <div class="relative overflow-x-auto bg-slate-400">
+    <div class="   right-full"> -->
               <!-- Previous Button -->
-        <a href="{{ route('products.create') }}" class="flex items-center justify-center px-3 h-8 text-sm font-medium  bg-white border border-gray-700 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700  dark:hover:bg-gray-700 ">
+        <a href="{{ route('products.create') }}" class="flex items-center justify-center px-3 h-8 text-sm font-medium  bg-white border border-gray-700 rounded-lg hover:bg-gray-100  ">
            <svg class="h-8 w-8 text-pink-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="12" y1="5" x2="12" y2="19" />  <line x1="5" y1="12" x2="19" y2="12" /></svg>
         </a>
-    </div>
+    <!-- </div> -->
           
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="w-full h-full text-gray-700  bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+        <thead class="w-full h-full text-gray-700  bg-gray-50">
              <tr>
                 <th scope="col" class="px-6 py-3">
                     ID
@@ -38,7 +38,7 @@
         </thead>
         @foreach ($products as $product )
         <tbody>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <tr class="bg-white border-b">
                 
                 <th scope="row" class="text-3xl px-6 py-4 font-medium whitespace-nowrap text-red-600">
                     {{ $product->id }}
@@ -75,6 +75,6 @@
         </tbody>
     </table>
 
-</div>
-</div>
+<!-- 
+</div> -->
 @endsection
