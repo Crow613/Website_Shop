@@ -4,7 +4,9 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\Product\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SiteController;
+use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -26,28 +28,15 @@ Route::get('/',[SiteController::class,'home'])->name('home');
 Route::get('/about',[SiteController::class,'about'])->name('about');
 Route::get('/contact',[SiteController::class,'contact'])->name('contact');
 
+
 //Product
 Route::group(['prefix' => 'products'], function () {
-    Route::get('/',[ProductController::class,'index'])->name('site.products.index');
+
+    Route::get('/',[App\Http\Controllers\ProductController::class,'index'])->name('site.products.index');
     Route::get('/{id}',[\App\Http\Controllers\ProductController::class,'show'])->name('site.products.show');
     
 });
 
-
-//Admin
-Route::group(['prefix' => 'admin'], function () {
-   
-
-    Route::get('/products',[ProductController::class,'index'])->name('products.index');
-    Route::get('/products/create',[ProductController::class,'create'])->name('products.create');
-    Route::post('/products',[ProductController::class,'store'])->name('products.store');
-    Route::get('/products/edit/{id}',[ProductController::class,'edit'])->name('products.edit');
-    Route::patch('/products/{id}',[ProductController::class,'update'])->name('products.update');
-    Route::get('/products/{id}',[ProductController::class,'show'])->name('products.show');
-    Route::delete('/products/{id}',[ProductController::class,'destroy'])->name('products.destroy');
-    Route::get('/product/search',[ProductController::class,'seek'])->name('product.search');
-    
-});   
 
 
 Route::get('/dashboard', function () {
@@ -56,11 +45,38 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/',[AdminController::class,'index'])->name('admin.home');
+
+
+  Route::prefix('user')->group(function () {
     
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+  });
+
 });
+
+
+
+//Admin
+Route::group(['prefix' => 'admin'], function () {
+   
+  Route::get('/',[AdminController::class,'index'])->name('admin.home');
+  Route::get('/products',[ProductController::class,'index'])->name('products.index');
+  Route::get('/products/create',[ProductController::class,'create'])->name('products.create');
+  Route::post('/products',[ProductController::class,'store'])->name('products.store');
+  Route::get('/products/edit/{id}',[ProductController::class,'edit'])->name('products.edit');
+  Route::patch('/products/{id}',[ProductController::class,'update'])->name('products.update');
+  Route::get('/products/{id}',[ProductController::class,'show'])->name('products.show');
+  Route::delete('/products/{id}',[ProductController::class,'destroy'])->name('products.destroy');
+  Route::get('/product/search',[ProductController::class,'seek'])->name('product.search');
+  Route::get('/profile', [ProfileController::class, 'edit'])->name('admin.prodile.edit');
+  Route::patch('/profile', [ProfileController::class, 'update'])->name('admin.profile.update');
+  Route::delete('/profile', [ProfileController::class, 'destroy'])->name('admin.profile.destroy');
+
+
+});   
+
 
 require __DIR__.'/auth.php';
