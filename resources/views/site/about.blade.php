@@ -8,7 +8,7 @@
           <img src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2023%2F05%2Flionsgate-confirms-john-wick-5-early-development-announcement-001.jpg?cbr=1&q=90" alt="" class="h-16 w-13 rounded-full bg-gray-50">
           <div class="text-sm leading-6">
             <p class="font-semibold text-gray-900">
-              <a class="text-4xl" href="#">
+              <a class="text-4xl" href="https://en.wikipedia.org/wiki/John_Wick:_Chapter_2">
                 <span class=" absolute inset-0 "></span>
                 {{ __("John Wick") }}
               </a>
@@ -37,8 +37,6 @@
         </div>
        
       </article>
-
-      <!-- More posts... -->
     </div>
   </div>
 @endsection
