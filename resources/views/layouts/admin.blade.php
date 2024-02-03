@@ -12,6 +12,7 @@
 class="bg-slate-600">
 
 <div class="flex justify-center ">
+
     <div class="m-1 p-4 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
       
          @yield('content')
@@ -19,7 +20,6 @@ class="bg-slate-600">
     </div> 
     
  </div>
- 
 
 </body>
 </html>

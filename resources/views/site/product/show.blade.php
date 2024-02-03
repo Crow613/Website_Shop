@@ -3,16 +3,20 @@
 
 @section('content')
 
-<div class="flex">
+<div class="w-full h-full">
+
+<div class="flex justify-center">
+
+<div class="flex justify-normal">
    <a href="{{ route('siteProducts') }}" class="flex items-center justify-center px-3 h-8 text-sm font-bold text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700">
       <svg class="h-8 w-8 text-blue-700"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="5" y1="12" x2="19" y2="12" />  <line x1="5" y1="12" x2="11" y2="18" />  <line x1="5" y1="12" x2="11" y2="6" /></svg>
    </a>
 </div>
 
 
-<div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+<div class=" flex justify-end max-w-screen-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
   <a href="#">
-      <img class="p-8 rounded-t-lg" src="{{ asset('storage/'.$product->img)}}" alt="product image" />
+      <img class="p-8 rounded-t-lg" src="{{ asset('storage/img/'.$product->img)}}" alt="product image" />
   </a>
   <div class="px-5 pb-5">
       <a href="#">
@@ -45,7 +49,7 @@
       </div>
   </div>
 </div>
-
+</div>
 
 @endsection
 

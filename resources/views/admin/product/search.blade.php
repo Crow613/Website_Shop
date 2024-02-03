@@ -35,11 +35,10 @@
         
          @foreach ($products as $product )
              
-         <tbody>
-                  
+         <tbody>                
             <tr class="bg-white border-b">
                 <th>
-                    <input type="image" src="{{ asset('storage/'.$product->img)}}" alt="image">
+                    <input type="image" src="{{ asset('storage/img/'.$product->img)}}" alt="image">
                 </th>
                 <th scope="row" class="text-3xl px-6 py-4 font-medium whitespace-nowrap text-red-600">
                     {{ $product->id }}
@@ -60,12 +59,10 @@
                <form class="px-6 py-4" action="{{ route('productDelete',$product->id) }}" method="post">
                     @csrf
                      @method('delete')
-                     <td class="px-6 py-4"><button type="submit" class="text-red-600"><svg class="h-8 w-8 text-red-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <polyline points="3 6 5 6 21 6" />  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />  <line x1="10" y1="11" x2="10" y2="17" />  <line x1="14" y1="11" x2="14" y2="17" /></svg></button></td>
-                        
+                     <td class="px-6 py-4"><button type="submit" class="text-red-600"><svg class="h-8 w-8 text-red-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <polyline points="3 6 5 6 21 6" />  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />  <line x1="10" y1="11" x2="10" y2="17" />  <line x1="14" y1="11" x2="14" y2="17" /></svg></button></td>     
                </form>     
             </tr>  
         </tbody>
-
         @endforeach
     </table>
     

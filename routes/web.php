@@ -20,9 +20,10 @@ use App\Http\Controllers\Products\ProductController;
 Route::get('/',[SiteController::class,'index'])->name('home');
 Route::get('/about',[SiteController::class,'about'])->name('about');
 Route::get('/products',[SiteController::class,'products'])->name('siteProducts');
-Route::get('/show/{id}',[SiteController::class,'siteProductShow'])->name('siteProductShow');
+Route::get('/show/{id}',[SiteController::class,'productShow'])->name('siteProductShow');
+Route::post('/product/search',[SiteController::class,'productsSearch'])->name('siteProductSearch');
 
-// ADMIN PAGE
+
 Route::group(['prefix'=> 'admin'], function () {
      Route::get('/',[AdminController::class, 'index'])->name('adminHome');
      Route::patch('/edit',[AdminController::class,'update'])->name('adminEditPage');
