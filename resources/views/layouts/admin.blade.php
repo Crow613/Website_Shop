@@ -8,18 +8,13 @@
     @vite(['resources/css/app.css','resources/assets/js/script.js'])
    
 </head>
-<body
-class="bg-slate-600">
+<body>
 
-<div class="flex justify-center ">
-
-    <div class="m-1 p-4 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+    <div class="flex justify-center border-gray-200 border-dashed rounded-lg dark:border-gray-600">
       
          @yield('content')
            
     </div> 
     
- </div>
-
 </body>
 </html>

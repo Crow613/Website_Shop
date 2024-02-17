@@ -38,7 +38,7 @@
          <tbody>                
             <tr class="bg-white border-b">
                 <th>
-                    <input type="image" src="{{ asset('storage/img/'.$product->img)}}" alt="image">
+                    <input type="image" src="{{ Vite::asset('storage/app/public/img/product/'.$product->img) }}" alt="image">
                 </th>
                 <th scope="row" class="text-3xl px-6 py-4 font-medium whitespace-nowrap text-red-600">
                     {{ $product->id }}

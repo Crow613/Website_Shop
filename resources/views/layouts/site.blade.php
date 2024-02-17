@@ -3,18 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Online Shop</title>
+    <title>Shop</title>
 
     @vite(['resources/css/app.css','resources/js/app.js'])
 
 </head>
-<body class=" bg-purple-400 ">
+<body">
 
-   @include('site.includes.topbar')
 
-    <div class=" flex flex-1 items-center justify-center sm:items-stretch sm:justify-start text-4xl ">
         @yield('content')
-    </div>
+    
 
 </body>
 </html>

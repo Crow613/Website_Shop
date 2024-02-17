@@ -12,7 +12,7 @@ class SiteController extends Controller
 {
     public function index(): View
     {
-        return view('site.index'); 
+        return view('site.index',['products'=>Product::all()]); 
     }
     public function about() : View 
     {
@@ -20,7 +20,7 @@ class SiteController extends Controller
     }
     public function products() : View
     {
-    
+        
       return view('site.product.products',['products'=> Product::all()]);
     }
     public function productShow(int $id) : View

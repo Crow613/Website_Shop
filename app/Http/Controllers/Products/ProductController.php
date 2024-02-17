@@ -14,7 +14,7 @@ class ProductController extends Controller
       if ($request->hasFile("img")) {
         $file = $request->file("img");
         $filename = time() .".". $file->getClientOriginalExtension();
-        $file->storeAs('public/img', $filename);
+        $file->storeAs('public/img/product', $filename);
       }else{
         $filename = '';
       }
@@ -27,27 +27,27 @@ class ProductController extends Controller
             'price' => $request->price,
         ]
     );
-    
+     
        return view('admin.product.index',['products'=>Product::all()]);
         
     }
     public function update(int $id,Request $request)
     {
           $product = Product::find($id) ;
-      unlink(storage_path('app/public/img/'.$product->img));
+      
      if ($request->hasFile('img')) {
-
+      
+      if(file_exists(storage_path('app/public/img/product/'.$product->img))) {
+       unlink(storage_path('app/public/img/product/'.$product->img));
+      }
       $file=$request->file('img');
       $filename =time() .".". $file->getClientOriginalExtension();
       
-      $file->storeAs('public/img', $filename);
-      
-     }else{
-      $filename = '';
+      $file->storeAs('public/img/product', $filename);
+      $product->update(['img' => $filename,]);
      }
             
       $product->update([
-            'img'=> $filename,
             'name' => $request->name,
             'descreption' => $request->description,
             'price' => $request->price,
@@ -61,7 +61,7 @@ class ProductController extends Controller
     public function destroy(int $id)
     {
          $productDel = Product::find($id);
-         $pathImgDell = storage_path('/app/public/img/'.$productDel->img);
+         $pathImgDell = storage_path('/app/public/img/product/'.$productDel->img);
          
            if (file_exists($pathImgDell)) {
             unlink($pathImgDell);

@@ -12,7 +12,7 @@
 <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
   
  <a href="#">
-     <img class="p-8 rounded-t-lg" src="{{ asset('storage/img/'.$product->img)}}" alt="product image" />
+     <img class="p-8 rounded-t-lg" src="{{ Vite::asset('storage/app/public/img/product/'.$product->img) }}" alt="product image" />
  </a>
  <div class="px-5 pb-5">
      <a href="#">

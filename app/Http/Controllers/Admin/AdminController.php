@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\User;
 use App\Models\Product;
 use App\Models\Products;
 use Illuminate\Http\Request;
@@ -17,10 +18,7 @@ class AdminController extends Controller
     {
         return view("admin.profile.edit");
     }
-    public function destroy(Request $request)
-    {
-
-    }
+    
     public function products(Product $products)
     {
        
@@ -48,6 +46,14 @@ class AdminController extends Controller
        
         return view('admin.product.search', compact('products'));
 
+    }
+    public function users()
+    {
+        return view('admin.users.users', ['users'=> User::all()]);
+    }
+    public function services()
+    {
+        return view('admin.services.chat');
     }
     
 
