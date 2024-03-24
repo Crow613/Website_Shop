@@ -53,7 +53,7 @@ class AdminController extends Controller
     }
     public function services()
     {
-        return view('admin.services.chat');
+        return view('admin.users.services.helpChat');
     }
     
 

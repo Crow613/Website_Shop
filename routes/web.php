@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Shop\ShoppingController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\ProfileController;
@@ -28,14 +29,16 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-Route::get('/user', [UserController::class,'index'])->name('user');
+    Route::get('/user', [UserController::class,'index'])->name('user');
     Route::get('/products',[SiteController::class,'products'])->name('siteProducts');
     Route::get('/show/{id}',[SiteController::class,'productShow'])->name('siteProductShow');
     Route::post('/product/search',[SiteController::class,'productsSearch'])->name('siteProductSearch');
     Route::get('/user/help',[UserController::class,'chatHelp'])->name('chatHelp');
+    Route::get('/user/shop',[ShoppingController::class,'shop'])->name('shop');
+    Route::post('/user/shopping/{id}',[ShoppingController::class,'create'])->name('shopping');
 
 Route::group(['prefix'=> 'admin','middleware'=> ['admin']], function () {
-     
+
      Route::get('/',[AdminController::class, 'index'])->name('adminHome');
      Route::patch('/edit',[AdminController::class,'update'])->name('adminEditPage');
      Route::delete('/delete',[AdminController::class,'destroy'])->name('adminDeletePage');

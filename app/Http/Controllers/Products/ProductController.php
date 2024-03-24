@@ -24,11 +24,12 @@ class ProductController extends Controller
             'img' => $filename,
             'name' => $request->name,
             'description' => $request->description,
+            'quantities'=>$request->quantities,
             'price' => $request->price,
         ]
     );
      
-       return view('admin.product.index',['products'=>Product::all()]);
+    return redirect()->route('adminProducts');
         
     }
     public function update(int $id,Request $request)

@@ -26,6 +26,10 @@
                 <input type="text" class="form-control" id="description" placeholder="description" name="description" value="{{ old('description',$product->description) }}">
             </div>
             <div class="mb-3">
+                <label for="price" class="form-label">{{__("Quantities")}}</label>
+                <input type="number" class="form-control" id="price" name="quantities" value="{{ old('price',$product->quantities) }}">
+            </div>
+            <div class="mb-3">
                 <label for="price" class="form-label">{{__("Price")}}</label>
                 <input type="number" class="form-control" id="price" name="price" value="{{ old('price',$product->price) }}">
             </div>

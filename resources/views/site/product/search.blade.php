@@ -1,7 +1,7 @@
 @extends('layouts.site')
 
 @section('content')
-
+@include('site.includes.helpChat')
   <div class="flex">
         <a href="{{ route('home') }}" class="flex items-center justify-center px-3 h-8 text-sm font-bold text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700">
              <svg class="h-8 w-8 text-blue-700"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="5" y1="12" x2="19" y2="12" />  <line x1="5" y1="12" x2="11" y2="18" />  <line x1="5" y1="12" x2="11" y2="6" /></svg>

@@ -2,7 +2,7 @@
 
 
 @section('content')
-
+@include('site.includes.helpChat')
 <div class="w-full h-full">
 
 <div class="flex justify-center">

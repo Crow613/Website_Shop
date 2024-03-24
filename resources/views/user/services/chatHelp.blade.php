@@ -1,9 +1,8 @@
 @extends('layouts.site')
 
 @section('content')
-@include('site.includes.menubar')
 
-
-
+@include('site.includes.helpChat')
+        
 
 @endsection
